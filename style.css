@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bolder;
+    cursor: url('cursorCustomizado.png'), auto;
+}
+
+
+body{
+    height: 100vh;
+    font-family: 'PT Sans Narrow', sans-serif;
+    background-color: #030213;
+    transition: 2s; /*transição para voltar ao modo escuro (padrão) do site de maneira suave*/
+}
+
+.inicio{
+    margin-top: 40px;
+    color: white;
+    background-color: #FFC23C;
+    text-align: center;
+}
+
+form{
+    margin-left: 100px;
+    color:#fff;
+}
+
+.inicio h1{
+    font-size: 50px;
+    margin-left: 100px;
+}
+
+.inicio h2{
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+/*Altera o nav principal*/
+nav.menuLateral{
+    z-index: 1000;
+    width: 80px;
+    height: 100%;
+    background-color: #030213;
+    padding: 40px -20px 40px 1%;
+    box-shadow: 9px 0 0 rgb(255, 0, 157);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden; /*Quando não houver espaço para mais elementos, eles irão ficar invisíveis*/
+    transition: .2s; /*Deixa mais suave a animação do menu expandindo*/
+    white-space: nowrap; /* Impede a quebra de linha do texto */
+}
+
+/*Quando tiver a classe "expandir", ele vai se expandir*/
+nav.menuLateral.expandir{
+    width: 380px;
+}
+
+/*Estiliza a div que fica ícone das 3 barrinhas*/
+.expandir{
+    width: 100%;
+    padding: 10px 10px 50px 9px;
+}
+
+/*Vai chamar o ícone das 3 barrinhas que está contido dentro da div e estilizá-lo*/
+.expandir > i {
+    color: aliceblue;
+    font-size: 54px;
+    cursor: url('cursorCustomizadoHover.png'), auto;
+}
+
+/*Faz com que a lista ocupe toda a altura do navbar e remove as características
+de lista dela*/
+ul{
+    height: 100%;
+    list-style-type: none; /*Tira as bolinhas de lista*/
+}
+
+/*Quando o usuário passar o mouse por cima dos itens do menu, o background vai mudar de cor*/
+ul li.itemMenu:hover{
+    background-color: rgb(255, 0, 157);
+    opacity: 1; 
+}
+
+
+ul li.itemMenu{
+    transition: .4s; /*faz com que a animação do usuário passando o mouse por
+    cima dos itens do menu demore um pouco, dando um efeito melhor*/
+}
+
+ul li{
+    opacity: .6;
+    padding: 0px 0px 0px 0px;
+}
+
+/*Sempre que a li tiver a classe "ativo", os códigos abaixo irão acontecer*/
+ul li.ativo{
+    background-color: rgb(255, 0, 157);
+    opacity: 1;
+}
+
+/*Estiliza tanto o hiperlink quanto os ícones*/
+ul li.itemMenu a{
+    color: white;
+    text-decoration: none; /*Remove o traço abaixo das letras*/
+    font-size: 20px;
+    padding: 20px 15% 20px 10px;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px; /*Alinha o hiperlink com o seu ícone correspondente*/
+    transition: .6s;
+}
+
+/*Estiliza o hiperlink*/
+ul li.itemMenu a .hiperLink{
+    transition: .4s;
+    opacity: 0;
+}
+
+/*Sempre que o nav menuLateral tiver a classe expandir, coisas aconteceram com o "hiperlink"*/
+nav.menuLateral.expandir .hiperLink{
+    margin-left: 40px;
+    opacity: 1;
+}
+
+/*Sempre que o nav menuLateral tiver a classe expandir, coisas aconteceram com o "a"*/
+nav.menuLateral.expandir a{
+    padding: 20px 15% 20px 50px;
+}
+
+/*Estiliza os ícones que ficam dentro do botão de menu*/
+ul li.itemMenu a .icones > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+/*Estilização da página de recursos*/
+
+
+
+
+table {
+    border-collapse: collapse; /* Remove as bordas entre as células */
+    width: 90%; /* Define a largura da tabela */
+    border: none;
+    margin-left: 7%; /* Alinha à esquerda */
+    margin-right: 7%; /* Alinha à direita */
+}
+
+td {
+    padding: 2px; /* Adiciona um pequeno espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    color: #5e18e2;
+}
+
+tr{
+    border-radius: 10px;
+}
+
+/* Estilo para células pares */
+tr:nth-child(even) td {
+    background-color: #ffffff; /* Adiciona um fundo cinza claro para as células pares */
+}
+
+th{
+    color: #f2f2f2;
+    background-color: #5f18e200;
+}
+
+h1{
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+/*Estilização da página de ficha de animais*/
+
+.fichaA {
+    background-color: #041938;
+    width: 100%;
+    height: auto;
+    display: flex; /* Define o layout como flexível */
+    justify-content: center;
+}
+
+.fichaA-Alinhamento {
+    display: flex; /* Define o layout como flexível */
+    flex-direction: row; /* Direção de linha */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+    padding: 20px 0px 0px 10%;
+}
+
+.card-ficha {
+    /* Adicione estilos para os cards conforme necessário */
+    width: 370px; /* Ajuste conforme necessário */
+    height: 500px; /* Ajuste conforme necessário */
+    background-color: #ccc; /* Ajuste conforme necessário */
+    margin: 10px; /* Espaçamento entre os cards */
+    float: left; /* Para alinhar horizontalmente */
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 1330px) {
+    .fichaA-Alinhamento {
+        margin-top: 0px;
+        float:inline-start;
+    }
+    .card-ficha {
+        /* Adicione estilos para os cards conforme necessário */
+        width: 340px; /* Ajuste conforme necessário */
+        height: 470px; /* Ajuste conforme necessário */
+        background-color: #ccc; /* Ajuste conforme necessário */
+        margin: 10px; /* Espaçamento entre os cards */
+        float: left; /* Para alinhar horizontalmente */
+        overflow: auto;
+    }
+}
+
+/* Media query para telas menores, como celulares em orientação retrato */
+@media screen and (max-width: 450px) {
+    .fichaA {
+        margin-left: 0px;
+    }
+    .fichaA-Alinhamento {
+        margin-top: 20%;
+        padding: 3%;
+        margin-left: 3%; /* Ajuste este valor conforme necessário */
+        width: 90%; /* Ajuste este valor conforme necessário */
+        transform: none; /* Remova a transformação anterior */
+    }
+    .card-ficha {
+        /* Adicione estilos para os cards conforme necessário */
+        width: 320px; /* Ajuste conforme necessário */
+        height: 450px; /* Ajuste conforme necessário */
+        background-color: #ccc; /* Ajuste conforme necessário */
+        margin: 10px; /* Espaçamento entre os cards */
+        float: left; /* Para alinhar horizontalmente */
+    }
+
+
+
+
+    /*Ajuste no menu, pare que se adapte a telas menores*/
+
+
+
+
+    nav.menuLateral {
+        width: 100%; /* Altera a largura para ocupar toda a largura da tela */
+        height: 90px; /* Altura inicial do menu, ajuste conforme necessário */
+        padding: 20px 10px; /* Ajusta o preenchimento */
+        box-shadow: none; /* Remove a sombra */
+        position: fixed; /* Mantém o menu fixo na tela */
+        top: 0; /* Alinha o menu ao topo */
+        left: 0; /* Alinha o menu à esquerda */
+        z-index: 1000; /* Define um índice de sobreposição para garantir que o menu esteja acima de outros elementos */
+        overflow: hidden; /* Esconde os itens do menu quando fechado */
+        transition: height 0.3s; /* Adiciona uma transição suave para a altura */
+        padding: 0;
+    }
+    
+    nav.menuLateral.expandir {
+        height: auto; /* Expande a altura do menu para mostrar os itens */
+        width: 100%;
+    }
+    
+    ul {
+        height: auto; /* Define a altura para automático */
+        padding-top: 20px; /* Ajusta o espaçamento superior dos itens do menu */
+    }
+    
+    ul li.itemMenu {
+        width: 100%; /* Define a largura para 100% */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    ul li.itemMenu a {
+        padding: 15px 0; /* Ajusta o preenchimento */
+    }
+    
+    .expandir {
+        display: block !important; /* Garante que o botão de hambúrguer seja exibido */
+    }
+}
+
+
+.a{
+    background-color: #5e18e2;
+}
+
+.b{
+    background-color: #FFC23C;
+}
+
+
+
+/*Estilização da página de configuração*/
+
+.card {
+    padding-left: 80px;
+    max-width: 800px; /* Defina a largura máxima do card */
+    margin: 50px auto; /* Centralize vertical e horizontalmente */
+    padding: 20px;
+    color: aliceblue;
+    background-color: #5e18e2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 9px 7px 0 #270764;
+    overflow: auto;
+  }
+
+  .card-b{
+    text-align: center;
+    display:flex;
+  }
+
+.coluna{
+    flex: 1; /* Cada card-pequeno ocupa a largura igualmente */
+    margin: 0 10px 5px 10px; /* Adiciona um espaçamento entre os cards */
+    padding: 15px;
+    background-color: #1a083d;
+    border-radius: 8px;
+    color: #fff;
+    width: 745px;
+    
+}
+
+.alinhamento{
+    display: flex;
+    flex-direction: row;
+    line-height: 30px; /*Alinha o trilho com o nome da configuração*/
+    margin: 0px 0px 20px 10px;
+}
+
+.indicador{
+    width: 28px;
+    height: 28px;
+    margin-top: 1px;
+    transform: scale(.9);
+    border-radius: 150px;
+    background-color: #FFC23C;
+    transform: translateX(0px); 
+    transition: .7s ease-out; /*Faz com que a animação da bolinha, voltando, seja mais suave*/
+}
+  
+.trilho {
+    width: 130px;
+    height: 30px;
+    border-radius: 150px;
+    background-color: #320e75;
+    margin-left: 20px; /*Distância entre o nome da configuração e a configuração*/
+  }
+
+  .trilho, .indicador, .menuLateral a, .menuLateral a *{
+    cursor: url('cursorCustomizadoHover.png'), auto;
+  }
+  
+  .trilho.light {
+    background-color: #ffc23c;
+    transition: background-color 5s ease; /* Adiciona uma transição suave para a mudança de cor */
+  }
+  
+.trilho.light{
+    background-color: #FFC23C;
+    transition: .7s;
+}
+
+.trilho.light .indicador{
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  transform: translateX(94px);
+  transition: .7s ease-out;
+}
+
+body.light{
+    transition: 3s;
+    background-color: rgb(255, 255, 255);
+}
+
+.visual{
+    margin-left: 70px;
+}
+
