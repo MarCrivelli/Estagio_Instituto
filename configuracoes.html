@@ -15,7 +15,6 @@
 </head>
 
 <body class="pagina-configuracoes">
-
   <nav class="menuLateral">
     <div class="expandir">
       <i class="bi bi-list" id="botaoExpandir"></i>
@@ -61,76 +60,47 @@
 
 
 
-
+  <div style="background-color: #030213; width: 100%; height: 100%; display: flex; justify-content: center; overflow: auto;">
   <div class="card">
-
-    <h1 class="visual">Visual Settings</h1>
-    <div class="card-b">
-      <div class="coluna">
-
-        <div class="alinhamento">
-          <h1>Theme</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
-
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
+    <div class="ajusteBloco">
+      <h1>Configurações de conta</h1> 
+      <div class="bloco">
+        <div></div>
       </div>
     </div>
-    <h1 class="visual">Additional Settings</h1>
-    <div class="card-b">
-      <div class="coluna">
+     <div>
+      <h1>Programar postagem</h1> 
+      <div class="bloco">
 
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
+        <div class="ajusteBlocoProgramarHorario">
+          <input type="datetime-local" name="a" id="programarPostagem">
+          <h2>Insira uma data para a postagem</h2>
+        </div>
+
+        <div class="divisao"></div>
+
+        <div class="ajusteBlocoSelecionarAnimais">
+          <h1>Selecione quais animais farão parte desta postagem</h1>
+          <div class="caixaSelecaoAnimais">
+            <input class="definirAnimais" type="checkbox" name="b" id="definirGato">
+            <h2>Gatos</h2>
+          </div>
+          <div class="caixaSelecaoAnimais">
+            <input class="definirAnimais" type="checkbox" name="b" id="definirCachorro">
+            <h2>Cachorros</h2>
+          </div>
+          <div class="caixaSelecaoAnimais">
+            <input class="definirAnimais" type="checkbox" name="b" id="definirPassaros">
+            <h2>Pássaros</h2>
           </div>
         </div>
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
-        <div class="alinhamento">
-          <h1>Functionality not defined</h1>
-          <div class="trilho" id="trilho">
-            <div class="indicador"></div>
-          </div>
-        </div>
+
+        <div class="divisao"></div>
 
       </div>
-
-    </div>
-
-
+     </div>
   </div>
-
+</div>
 
 
   <script src="menu.js"></script>
