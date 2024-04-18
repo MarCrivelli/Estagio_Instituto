@@ -9,6 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100;200;500;900&family=Dhurjati&family=Oswald&family=PT+Sans+Narrow:wght@400;700&family=Teko:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+      nav.menuLateral{
+        box-shadow: 9px 0 0 rgb(255, 0, 157);
+      }
+      /*Sempre que a li tiver a classe "ativo", os códigos abaixo irão acontecer*/
+      ul li.ativo{
+        background-color: rgb(255, 0, 157);
+      }
+      ul li.itemMenu a.info:hover{
+        border: none;
+      }
+    </style>
   </head>
   <body  class="pagina-inicial">
 
@@ -18,19 +30,19 @@
         </div>
         <ul>
           <li class="itemMenu">
-            <a href="index.html">
+            <a class="home" href="index.html">
               <span class="icones"><i class="bi bi-house"></i></span>
               <span class="hiperLink">Início</span>
             </a>
           </li>
           <li class="itemMenu">
-            <a href="#">
+            <a class="gerenciarD" href="gerenciarD.html">
               <span class="icones"><i class="bi bi-cash-coin"></i></span>
-              <span class="hiperLink">Recursos</span>
+              <span class="hiperLink">Recursos e Despesas</span>
             </a>
           </li>
           <li class="itemMenu">
-            <a href="#">
+            <a href="gerenciarA.html">
               <span class="icones"><i class="bi bi-clipboard2"></i></span>
               <span class="hiperLink">Ficha de animais</span>
             </a>

@@ -10,11 +10,9 @@
 body{
     height: 100vh;
     font-family: 'PT Sans Narrow', sans-serif;
-    
 }
 
 .inicio{
-    margin-top: 40px;
     color: white;
     background-color: #FFC23C;
     text-align: center;
@@ -42,18 +40,17 @@ nav.menuLateral{
     height: 100%;
     background-color: #030213;
     padding: 40px -20px 40px 1%;
-    box-shadow: 9px 0 0 rgb(255, 0, 157);
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden; /*Quando não houver espaço para mais elementos, eles irão ficar invisíveis*/
-    transition: .2s; /*Deixa mais suave a animação do menu expandindo*/
+    transition: .6s; /*Deixa mais suave a animação do menu expandindo*/
     white-space: nowrap; /* Impede a quebra de linha do texto */
 }
 
 /*Quando tiver a classe "expandir", ele vai se expandir*/
 nav.menuLateral.expandir{
-    width: 380px;
+    width: 400px;
 }
 
 /*Estiliza a div que fica ícone das 3 barrinhas*/
@@ -76,12 +73,35 @@ ul{
     list-style-type: none; /*Tira as bolinhas de lista*/
 }
 
-/*Quando o usuário passar o mouse por cima dos itens do menu, o background vai mudar de cor*/
-ul li.itemMenu:hover{
-    background-color: rgb(255, 0, 157);
-    opacity: 1; 
+nav.menuLateral div.expandir{
+    margin-left: 5%;
 }
 
+/*Quando o usuário passar o mouse por cima dos itens do menu, o background vai mudar de cor*/
+ul li.itemMenu a.home:hover{
+    background-color: #0099ff;
+    border: 2px solid #fff;
+}
+
+ul li.itemMenu a.gerenciarD:hover{
+    background-color: #ffd900;
+    border: 2px solid #fff;
+}
+
+ul li.itemMenu a.gerenciarA:hover{
+    background-color: #00ff73;
+    border: 2px solid #fff;
+}
+
+ul li.itemMenu a.config:hover{
+    background-color: #5e18e2;
+    border: 2px solid #fff;
+}
+
+ul li.itemMenu a.info:hover{
+    background-color: rgb(255, 0, 157);
+    border: 2px solid #fff;
+}
 
 ul li.itemMenu{
     transition: .4s; /*faz com que a animação do usuário passando o mouse por
@@ -89,14 +109,7 @@ ul li.itemMenu{
 }
 
 ul li{
-    opacity: .6;
     padding: 0px 0px 0px 0px;
-}
-
-/*Sempre que a li tiver a classe "ativo", os códigos abaixo irão acontecer*/
-ul li.ativo{
-    background-color: rgb(255, 0, 157);
-    opacity: 1;
 }
 
 /*Estiliza tanto o hiperlink quanto os ícones*/
@@ -111,15 +124,17 @@ ul li.itemMenu a{
     transition: .6s;
 }
 
-/*Estiliza o hiperlink*/
+/*Estiliza a nomenclatura dos itens do menu*/
 ul li.itemMenu a .hiperLink{
-    transition: .4s;
+    transition: .7s;
     opacity: 0;
+    margin-left: 30px;
 }
+
 
 /*Sempre que o nav menuLateral tiver a classe expandir, coisas aconteceram com o "hiperlink"*/
 nav.menuLateral.expandir .hiperLink{
-    margin-left: 40px;
+    margin-left: 60px;
     opacity: 1;
 }
 
@@ -184,7 +199,7 @@ h1{
 /*Estilização da página de ficha de animais*/
 
 .fichaA {
-    background-color: #041938;
+    background-color: #030213;
     width: 100%;
     height: auto;
     display: flex; /* Define o layout como flexível */
@@ -196,102 +211,17 @@ h1{
     flex-direction: row; /* Direção de linha */
     align-items: center; /* Centraliza os elementos horizontalmente */
     flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+    justify-content: center;
     padding: 20px 0px 0px 10%;
+    margin-right: 4.78%; 
 }
 
 .card-ficha {
-    /* Adicione estilos para os cards conforme necessário */
-    width: 370px; /* Ajuste conforme necessário */
-    height: 500px; /* Ajuste conforme necessário */
-    background-color: #ccc; /* Ajuste conforme necessário */
+    width: 370px; 
+    height: 500px; 
+    background-color: #ccc; 
     margin: 10px; /* Espaçamento entre os cards */
-    float: left; /* Para alinhar horizontalmente */
 }
-
-/* Media query para telas menores */
-@media screen and (max-width: 1330px) {
-    .fichaA-Alinhamento {
-        margin-top: 0px;
-        float:inline-start;
-    }
-    .card-ficha {
-        /* Adicione estilos para os cards conforme necessário */
-        width: 340px; /* Ajuste conforme necessário */
-        height: 470px; /* Ajuste conforme necessário */
-        background-color: #ccc; /* Ajuste conforme necessário */
-        margin: 10px; /* Espaçamento entre os cards */
-        float: left; /* Para alinhar horizontalmente */
-        overflow: auto;
-    }
-}
-
-/* Media query para telas menores, como celulares em orientação retrato */
-@media screen and (max-width: 450px) {
-    .fichaA {
-        margin-left: 0px;
-    }
-    .fichaA-Alinhamento {
-        margin-top: 20%;
-        padding: 3%;
-        margin-left: 3%; /* Ajuste este valor conforme necessário */
-        width: 90%; /* Ajuste este valor conforme necessário */
-        transform: none; /* Remova a transformação anterior */
-    }
-    .card-ficha {
-        /* Adicione estilos para os cards conforme necessário */
-        width: 320px; /* Ajuste conforme necessário */
-        height: 450px; /* Ajuste conforme necessário */
-        background-color: #ccc; /* Ajuste conforme necessário */
-        margin: 10px; /* Espaçamento entre os cards */
-        float: left; /* Para alinhar horizontalmente */
-    }
-
-
-
-
-    /*Ajuste no menu, pare que se adapte a telas menores*/
-
-
-
-
-    nav.menuLateral {
-        width: 100%; /* Altera a largura para ocupar toda a largura da tela */
-        height: 90px; /* Altura inicial do menu, ajuste conforme necessário */
-        padding: 20px 10px; /* Ajusta o preenchimento */
-        box-shadow: none; /* Remove a sombra */
-        position: fixed; /* Mantém o menu fixo na tela */
-        top: 0; /* Alinha o menu ao topo */
-        left: 0; /* Alinha o menu à esquerda */
-        z-index: 1000; /* Define um índice de sobreposição para garantir que o menu esteja acima de outros elementos */
-        overflow: hidden; /* Esconde os itens do menu quando fechado */
-        transition: height 0.3s; /* Adiciona uma transição suave para a altura */
-        padding: 0;
-    }
-    
-    nav.menuLateral.expandir {
-        height: auto; /* Expande a altura do menu para mostrar os itens */
-        width: 100%;
-    }
-    
-    ul {
-        height: auto; /* Define a altura para automático */
-        padding-top: 20px; /* Ajusta o espaçamento superior dos itens do menu */
-    }
-    
-    ul li.itemMenu {
-        width: 100%; /* Define a largura para 100% */
-        text-align: center; /* Centraliza o texto */
-    }
-    
-    ul li.itemMenu a {
-        padding: 15px 0; /* Ajusta o preenchimento */
-    }
-    
-    .expandir {
-        display: block !important; /* Garante que o botão de hambúrguer seja exibido */
-    }
-}
-
 
 .a{
     background-color: #5e18e2;
@@ -301,9 +231,16 @@ h1{
     background-color: #FFC23C;
 }
 
-
-
 /*Estilização da página de configuração*/
+.fundo{
+    background-color: #030213; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    margin-left: 4.78%; 
+    width: 95.21%;
+}
+
 .card {
     width: 70%; /* Defina a largura máxima do card */
     margin: 3% 0% 3% 0%;
@@ -369,59 +306,88 @@ h1{
     margin-right: 2%;
   }
 
-.alinhamento{
-    display: flex;
-    flex-direction: row;
-    line-height: 30px; /*Alinha o trilho com o nome da configuração*/
-    margin: 0px 0px 20px 10px;
-}
+/* Media query para telas menores, como celulares em orientação retrato */
+@media screen and (max-width: 700px) {
+    .fundo{
+        margin-left: 0%; 
+        width: 100%;
+        height: 100%;
+    }
 
-.indicador{
-    width: 28px;
-    height: 28px;
-    margin-top: 1px;
-    transform: scale(.9);
-    border-radius: 150px;
-    background-color: #FFC23C;
-    transform: translateX(0px); 
-    transition: .7s ease-out; /*Faz com que a animação da bolinha, voltando, seja mais suave*/
-}
-  
-.trilho {
-    width: 130px;
-    height: 30px;
-    border-radius: 150px;
-    background-color: #320e75;
-    margin-left: 20px; /*Distância entre o nome da configuração e a configuração*/
-  }
+    .card {
+        margin-top: 100px;
+        margin-bottom: 30px;
+      }
 
-  .trilho, .indicador, .menuLateral a, .menuLateral a *{
-    cursor: url('cursorCustomizadoHover.png'), auto;
-  }
-  
-  .trilho.light {
-    background-color: #ffc23c;
-    transition: background-color 5s ease; /* Adiciona uma transição suave para a mudança de cor */
-  }
-  
-.trilho.light{
-    background-color: #FFC23C;
-    transition: .7s;
-}
+    .fichaA {
+        margin-left: 0px;
+    }
+    .fichaA-Alinhamento {
+        margin-top: 20%;
+        padding: 3%;
+        margin-left: 3%; /* Ajuste este valor conforme necessário */
+        width: 90%; /* Ajuste este valor conforme necessário */
+        transform: none; /* Remova a transformação anterior */
+    }
+    .card-ficha {
+        /* Adicione estilos para os cards conforme necessário */
+        width: 320px; /* Ajuste conforme necessário */
+        height: 450px; /* Ajuste conforme necessário */
+        background-color: #ccc; /* Ajuste conforme necessário */
+        margin: 10px; /* Espaçamento entre os cards */
+        float: left; /* Para alinhar horizontalmente */
+    }
 
-.trilho.light .indicador{
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  transform: translateX(94px);
-  transition: .7s ease-out;
-}
 
-body.light{
-    transition: 3s;
-    background-color: rgb(255, 255, 255);
-}
 
-.visual{
-    margin-left: 70px;
+
+    /*Ajuste no menu, pare que se adapte a telas menores*/
+
+    nav.menuLateral {
+        width: 100%; /* Altera a largura para ocupar toda a largura da tela */
+        height: 90px; /* Altura inicial do menu, ajuste conforme necessário */
+        padding: 20px 10px; /* Ajusta o preenchimento */
+        box-shadow: none; /* Remove a sombra */
+        position: fixed; /* Mantém o menu fixo na tela */
+        top: 0; /* Alinha o menu ao topo */
+        left: 0; /* Alinha o menu à esquerda */
+        z-index: 1000; /* Define um índice de sobreposição para garantir que o menu esteja acima de outros elementos */
+        overflow: hidden; /* Esconde os itens do menu quando fechado */
+        transition: height 0.3s; /* Adiciona uma transição suave para a altura */
+        padding: 0;
+    }
+    
+    nav.menuLateral.expandir {
+        height: auto; /* Expande a altura do menu para mostrar os itens */
+        width: 100%;
+    }
+    
+    /*Neste caso, faz com que os ícones do menu não se movam para o lado*/
+    nav.menuLateral.expandir a{
+        padding: 20px 15% 20px 0px;
+        margin-bottom: 50px;
+    }
+
+    nav.menuLateral.expandir .hiperLink{
+        margin-left: 30px;
+    }
+    
+    ul {
+        height: auto; /* Define a altura para automático */
+        padding-top: 20px; /* Ajusta o espaçamento superior dos itens do menu */
+    }
+    
+    ul li.itemMenu {
+        width: 100%; /* Define a largura para 100% */
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    ul li.itemMenu a {
+        padding: 15px 0; /* Ajusta o preenchimento */
+    }
+    
+    .expandir {
+        display: block !important; /* Garante que o botão de hambúrguer seja exibido */
+    }
 }
 

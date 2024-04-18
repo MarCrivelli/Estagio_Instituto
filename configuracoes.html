@@ -12,6 +12,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100;200;500;900&family=Dhurjati&family=Oswald&family=PT+Sans+Narrow:wght@400;700&family=Teko:wght@300;400;600&display=swap"
     rel="stylesheet">
+    <style>
+      nav.menuLateral{
+        box-shadow: 9px 0 0 #5e18e2;
+      }
+      /*Sempre que a li tiver a classe "ativo", os códigos abaixo irão acontecer*/
+      ul li.ativo{
+        background-color: #5e18e2;
+        border: none;
+      }
+      ul li.itemMenu a.config:hover{
+        border: none;
+      }
+    </style>
 </head>
 
 <body class="pagina-configuracoes">
@@ -21,31 +34,31 @@
     </div>
     <ul>
       <li class="itemMenu">
-        <a href="index.html">
+        <a class="home" href="index.html">
           <span class="icones"><i class="bi bi-house"></i></span>
           <span class="hiperLink">Início</span>
         </a>
       </li>
       <li class="itemMenu">
-        <a href="gerenciarD.html">
+        <a class="gerenciarD" href="gerenciarD.html">
           <span class="icones"><i class="bi bi-cash-coin"></i></span>
-          <span class="hiperLink">Despesas</span>
+          <span class="hiperLink">Recursos e Despesas</span>
         </a>
       </li>
       <li class="itemMenu">
-        <a href="gerenciarA.html">
+        <a class="gerenciarA" href="gerenciarA.html">
           <span class="icones"><i class="bi bi-clipboard2"></i></span>
           <span class="hiperLink">Ficha de animais</span>
         </a>
       </li>
       <li class="itemMenu ativo">
-        <a href="configuracoes.html">
+        <a class="config" href="configuracoes.html">
           <span class="icones"><i class="bi bi-gear-wide-connected"></i></span>
           <span class="hiperLink">Configurações</span>
         </a>
       </li>
       <li class="itemMenu">
-        <a href="info.html">
+        <a class="info" href="info.html">
           <span class="icones"><i class="bi bi-info-circle"></i></span>
           <span class="hiperLink">Sobre nós</span>
         </a>
@@ -60,7 +73,7 @@
 
 
 
-  <div style="background-color: #030213; width: 100%; height: 100%; display: flex; justify-content: center; overflow: auto;">
+  <div class="fundo">
   <div class="card">
     <div class="ajusteBloco">
       <h1>Configurações de conta</h1> 
