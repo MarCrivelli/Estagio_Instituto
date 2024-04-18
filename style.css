@@ -10,27 +10,19 @@
 body{
     height: 100vh;
     font-family: 'PT Sans Narrow', sans-serif;
+    background-color: #030213
 }
 
-.inicio{
-    color: white;
-    background-color: #FFC23C;
-    text-align: center;
+h1{
+    color: #ffffff;
 }
 
-form{
-    margin-left: 100px;
-    color:#fff;
+h2{
+    color: #ffffff;
 }
 
-.inicio h1{
-    font-size: 50px;
-    margin-left: 100px;
-}
-
-.inicio h2{
-    font-size: 40px;
-    margin-left: 100px;
+p{
+    color: #ffffff;
 }
 
 /*Altera o nav principal*/
@@ -81,26 +73,31 @@ nav.menuLateral div.expandir{
 ul li.itemMenu a.home:hover{
     background-color: #0099ff;
     border: 2px solid #fff;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu a.gerenciarD:hover{
     background-color: #ffd900;
     border: 2px solid #fff;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu a.gerenciarA:hover{
     background-color: #00ff73;
     border: 2px solid #fff;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu a.config:hover{
     background-color: #5e18e2;
     border: 2px solid #fff;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu a.info:hover{
     background-color: rgb(255, 0, 157);
     border: 2px solid #fff;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu{
@@ -122,6 +119,7 @@ ul li.itemMenu a{
     margin-bottom: 20px;
     line-height: 40px; /*Alinha o hiperlink com o seu ícone correspondente*/
     transition: .6s;
+    cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 /*Estiliza a nomenclatura dos itens do menu*/
@@ -130,7 +128,6 @@ ul li.itemMenu a .hiperLink{
     opacity: 0;
     margin-left: 30px;
 }
-
 
 /*Sempre que o nav menuLateral tiver a classe expandir, coisas aconteceram com o "hiperlink"*/
 nav.menuLateral.expandir .hiperLink{
@@ -150,10 +147,43 @@ ul li.itemMenu a .icones > i{
 }
 
 
-/*Estilização da página de recursos*/
 
 
 
+
+/*Estilização da página de início*/
+
+.fundoHome{
+    display: flex;
+    flex-direction: column;
+    background-color: #030213;
+    margin-left: 4.78%; 
+    width: 95.21%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .inicio{
+    color: white;
+    background-color: #FFC23C;
+    text-align: center;
+    margin-top: 30px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #030213;
+}
+
+.inicio h1{
+    font-size: 50px;
+    margin-left: 100px;
+}
+
+.inicio h2{
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+  /*Estilização da página de recursos*/
 
 table {
     border-collapse: collapse; /* Remove as bordas entre as células */
@@ -183,30 +213,17 @@ th{
     background-color: #5f18e200;
 }
 
-h1{
-    color: #ffffff;
-}
-
-
-
-
-
-
-
-
-
-
 /*Estilização da página de ficha de animais*/
 
-.fichaA {
+.fundoA {
     background-color: #030213;
     width: 100%;
     height: auto;
-    display: flex; /* Define o layout como flexível */
+    display: flex;
     justify-content: center;
 }
 
-.fichaA-Alinhamento {
+.fichaA{
     display: flex; /* Define o layout como flexível */
     flex-direction: row; /* Direção de linha */
     align-items: center; /* Centraliza os elementos horizontalmente */
@@ -219,12 +236,41 @@ h1{
 .card-ficha {
     width: 370px; 
     height: 500px; 
-    background-color: #ccc; 
-    margin: 10px; /* Espaçamento entre os cards */
+    background-color: #030213;
+    margin: 10px 10px 50px 10px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.a{
-    background-color: #5e18e2;
+.imagensDoCard{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: bottom .2s ease;
+    transition-delay: 0.5s;
+    object-fit: cover;
+}
+
+.imagensDoCard:hover{
+    height: 400px;
+    transition-delay: 0.5s;
+}
+
+.ajusteBotaoCard{
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.ajusteBotaoCard button{
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    width: 50%;
+    color: darkblue;
+    font-size: 20px;
+    box-shadow: 9px 7px 0 #252427;
 }
 
 .b{
@@ -306,8 +352,58 @@ h1{
     margin-right: 2%;
   }
 
+  /*CSS da página de informações*/
+
+  .fundoInfo{
+    display: flex;
+    flex-direction: column;
+    background-color: #030213;
+    margin-left: 4.78%; 
+    width: 95.21%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .fundoInfo .titulo{
+    background-color: rgba(255, 0, 157, 0.747);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-bottom: 20px;
+  }
+
+  .ajusteInformacoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-top: 5%;
+  }
+
+  .ajusteContainerInformacoes{
+    width: 40%;
+    height: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+  }
+
+  .ajusteContainerInformacoes h1{
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  .ajusteContainerInformacoes h2{
+    text-align: justify;
+    font-weight: 100;
+  }
+
 /* Media query para telas menores, como celulares em orientação retrato */
 @media screen and (max-width: 700px) {
+
+    /*Ajuste na página de ficha de animais*/
     .fundo{
         margin-left: 0%; 
         width: 100%;
@@ -338,7 +434,16 @@ h1{
         float: left; /* Para alinhar horizontalmente */
     }
 
+    /*Ajuste na página de informações*/
 
+    .fundoInfo{
+        margin-left: 0%; 
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-top: 90px;
+      }
+    
 
 
     /*Ajuste no menu, pare que se adapte a telas menores*/
