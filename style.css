@@ -77,13 +77,13 @@ ul li.itemMenu a.home:hover{
 }
 
 ul li.itemMenu a.gerenciarD:hover{
-    background-color: #ffd900;
+    background-color: #00ff73;
     border: 2px solid #fff;
     cursor: url('cursorCustomizadoHover.png'), auto;
 }
 
 ul li.itemMenu a.gerenciarA:hover{
-    background-color: #00ff73;
+    background-color:#ffd900;
     border: 2px solid #fff;
     cursor: url('cursorCustomizadoHover.png'), auto;
 }
@@ -217,8 +217,9 @@ th{
 
 .fundoA {
     background-color: #030213;
-    width: 100%;
-    height: auto;
+    margin-left: 4.78%; 
+    width: 95.22%;
+    height: 100%;
     display: flex;
     justify-content: center;
 }
@@ -226,34 +227,54 @@ th{
 .fichaA{
     display: flex; /* Define o layout como flexível */
     flex-direction: row; /* Direção de linha */
-    align-items: center; /* Centraliza os elementos horizontalmente */
+    align-items: start; /* Centraliza os elementos horizontalmente */
     flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
-    justify-content: center;
-    padding: 20px 0px 0px 10%;
-    margin-right: 4.78%; 
+    justify-content: start;
+    padding: 20px 0px 0px 4%; 
+    width: 100%;
 }
 
 .card-ficha {
     width: 370px; 
     height: 500px; 
-    background-color: #030213;
-    margin: 10px 10px 50px 10px;
+    background-image: url('fundoCard.jpg');
+    background-size: cover; /* Para cobrir toda a área da div */
+    background-position: center; /* Para centralizar a imagem */
+    backdrop-filter: blur(5px); /* Aplica um efeito de desfoque */
+    background-color: #ffc13c;
+    margin: 10px 10px 50px 100px;
     border-radius: 10px;
     overflow: hidden;
 }
 
+.blur{
+    backdrop-filter: blur(5px);
+    height: 100%;
+}
+
 .imagensDoCard{
     width: 100%;
-    height: 100%;
+    height: 500px;
     border-radius: 10px;
-    transition: bottom .2s ease;
-    transition-delay: 0.5s;
+    transition: .2s ease;
+    transition-delay: 1s;
     object-fit: cover;
 }
 
 .imagensDoCard:hover{
     height: 400px;
-    transition-delay: 0.5s;
+    transition-delay: 0s;
+}
+
+.ajusteInformacoesDescricao{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.ajusteInformacoesDescricao .informacoes{
+    margin-left: 5%;
+    font-weight: 300;
 }
 
 .ajusteBotaoCard{
@@ -268,13 +289,10 @@ th{
     border: none;
     border-radius: 2px;
     width: 50%;
-    color: darkblue;
+    color: #4793AF;
+    background-color: #ececec;
     font-size: 20px;
-    box-shadow: 9px 7px 0 #252427;
-}
-
-.b{
-    background-color: #FFC23C;
+    box-shadow: 9px 7px 0 #cccaca;
 }
 
 /*Estilização da página de configuração*/
@@ -495,4 +513,3 @@ th{
         display: block !important; /* Garante que o botão de hambúrguer seja exibido */
     }
 }
-

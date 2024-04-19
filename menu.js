@@ -22,36 +22,27 @@ variavelBotaoExpandir.addEventListener('click', function () {
 
 console.log('Script menu.js carregado e em execução.');
 
-let trilho = document.getElementById('trilho');
-let body = document.querySelector('body');
-let indicador = document.querySelector('.indicador');
+var divAumentada = false;
 
-function togglelightMode() {
-    trilho.classList.toggle('light');
-    body.classList.toggle('light');
-  
-    // Adiciona a classe para animar a transição apenas quando a classe light está presente
-    if (trilho.classList.contains('light') && trilho.classList.contains('automatic-animation')) {
-      indicador.classList.add('animate-light');
-    } else {
-      indicador.classList.remove('animate-light');
-    }
-  
-    // Salva o estado do tema no localStorage
-    localStorage.setItem('lightMode', trilho.classList.contains('light'));
-  }
-  
-  // Adiciona um ouvinte de evento para chamar a função togglelightMode ao clicar na div trilho
-  trilho.addEventListener('click', togglelightMode);
-  
-  // Verifica se a página já está inicialmente em modo light e adiciona a classe automatic-animation se necessário
-  window.addEventListener('load', () => {
-    // Verifica se há um valor salvo no localStorage
-    const lightModeEnabled = localStorage.getItem('lightMode') === 'true';
-  
-    if (lightModeEnabled) {
-      trilho.classList.add('light', 'automatic-animation');
-      body.classList.add('light');
-      indicador.classList.add('animate-light');
-    }
-  });
+function expandir() {
+  var div = document.getElementById('divExpansiva');
+  var descricao = document.getElementById('descricao');
+  var botao = document.getElementById('revelar');
+  var blur = document.getElementById('aplicarBlur')
+
+  if (divAumentada) {
+    div.style.height = '500px'; // Define a altura original
+    divAumentada = false;
+    descricao.style.display = 'none';
+    botao.textContent = 'Mostrar mais'; 
+    blur.classList.remove('blur');
+
+} else {
+    div.style.height = '700px'; // Aumenta a altura
+    descricao.style.display = 'block'; // Exibe o parágrafo
+    botao.textContent = 'Mostrar menos';
+    divAumentada = true;
+    botao.classList.add('blur'); // Adiciona a classe de desfoque
+    blur.classList.add('blur');
+}
+}
