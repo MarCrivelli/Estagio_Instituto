@@ -63,30 +63,32 @@
     </nav>
 
     <div class="fundoA">
+      <input type="text" id="searchBar" placeholder="Buscar por nome...">
+      <button id="showFormButton">Adicionar Informações</button>
       <div class="fichaA">
-            <div id="divExpansiva" class="card-ficha">
-              <div id="aplicarBlur" class="blur">
-                <img src="dog.jpg" class="imagensDoCard">
-                <div id="descricao" style="display: none; margin-left: 10px; margin-bottom: 20px;">
-                  <div class="ajusteInformacoesDescricao">
-                    <h2>Nome:</h2>
-                    <h2 id="nomePet" class="informacoes">Scoobyaaa</h2>
-                  </div>
-                  <div class="ajusteInformacoesDescricao">
-                    <h2>Idade:</h2>
-                    <h2 id="idadePet" class="informacoes">15</h2>
-                  </div>
-                  <div class="ajusteInformacoesDescricao">
-                    <h2>Raça:</h2>
-                    <h2 id="racaPet" class="informacoes">Vira-Lata</h2>
-                  </div>
-                  <h2></h2>
-                </div>
-                <div class="ajusteBotaoCard">
-                  <button id="revelar" onclick="expandir()">Mostrar mais</button>
-                </div>
+          
+          <div id="fichaDosAnimais"></div>
+  
+      <div id="formModal" class="modal">
+          <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <div id="imageContainer">
+                  <img id="imagePreview" src="" alt="Prévia da Imagem" style="display: none; max-width: 100%; height: auto;">
+                  <input type="file" id="imageInput" accept="image/*">
               </div>
-            </div>
+              <input type="text" id="nameInput" placeholder="Nome">
+              <input type="number" id="ageInput" placeholder="Idade">
+              <input type="text" id="breedInput" placeholder="Raça">
+              <textarea id="descriptionInput" placeholder="Descrição"></textarea>
+              <select id="animalTypeInput">
+                <option value="gato">Gato</option>
+                <option value="cachorro">Cachorro</option>
+                <option value="passaro">Pássaro</option>
+              </select>
+              <button id="confirmButton">Confirmar</button>
+          </div>
+      </div>
+
       </div>
    </div>
    

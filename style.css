@@ -234,67 +234,120 @@ th{
     width: 100%;
 }
 
-.card-ficha {
-    width: 370px; 
-    height: 500px; 
-    background-image: url('fundoCard.jpg');
-    background-size: cover; /* Para cobrir toda a área da div */
-    background-position: center; /* Para centralizar a imagem */
-    backdrop-filter: blur(5px); /* Aplica um efeito de desfoque */
-    background-color: #ffc13c;
-    margin: 10px 10px 50px 100px;
-    border-radius: 10px;
+#searchBar {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+#fichaA {
+    margin-bottom: 20px;
+}
+
+#fichaDosAnimais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cardAnimais {
+    width: 470px;
+    height: 600px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
 }
 
-.blur{
-    backdrop-filter: blur(5px);
-    height: 100%;
-}
-
-.imagensDoCard{
+.cardAnimais img {
     width: 100%;
-    height: 500px;
-    border-radius: 10px;
-    transition: .2s ease;
-    transition-delay: 1s;
-    object-fit: cover;
+    height: auto;
+    max-height: 400px;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.imagensDoCard:hover{
-    height: 400px;
-    transition-delay: 0s;
+.cardAnimais h3, .cardAnimais p, .cardAnimais h4, .cardAnimais div {
+    margin: 0;
+    text-align: center;
 }
 
-.ajusteInformacoesDescricao{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
-}
-
-.ajusteInformacoesDescricao .informacoes{
-    margin-left: 5%;
-    font-weight: 300;
-}
-
-.ajusteBotaoCard{
+.card-actions {
     margin-top: 10px;
-    width: 100%;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-.ajusteBotaoCard button{
-    padding: 10px;
-    border: none;
-    border-radius: 2px;
-    width: 50%;
-    color: #4793AF;
-    background-color: #ececec;
-    font-size: 20px;
-    box-shadow: 9px 7px 0 #cccaca;
+.card-actions button {
+    margin: 0 5px;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Leve blur no fundo */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    max-height: 700px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: auto;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#imageInput {
+    margin-top: 10px;
+}
 /*Estilização da página de configuração*/
 .fundo{
     background-color: #030213; 
@@ -422,20 +475,24 @@ th{
 @media screen and (max-width: 700px) {
 
     /*Ajuste na página de ficha de animais*/
-    .fundo{
-        margin-left: 0%; 
+    .fundoA{
+        margin-left: 0; 
         width: 100%;
-        height: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
     }
-
-    .card {
-        margin-top: 100px;
-        margin-bottom: 30px;
-      }
 
     .fichaA {
         margin-left: 0px;
+        margin-top: 120px;
+        justify-content: center;
     }
+
+    .imagensDoCard:hover{
+        height: 350px;
+    }
+
     .fichaA-Alinhamento {
         margin-top: 20%;
         padding: 3%;
@@ -444,12 +501,14 @@ th{
         transform: none; /* Remova a transformação anterior */
     }
     .card-ficha {
-        /* Adicione estilos para os cards conforme necessário */
         width: 320px; /* Ajuste conforme necessário */
-        height: 450px; /* Ajuste conforme necessário */
+        height: 900px; /* Ajuste conforme necessário */
         background-color: #ccc; /* Ajuste conforme necessário */
-        margin: 10px; /* Espaçamento entre os cards */
-        float: left; /* Para alinhar horizontalmente */
+        margin: 10px 20px 30px 10px; /* Espaçamento entre os cards */
+    }
+
+    .ajusteBotaoCard button{
+        margin-bottom: 0px;
     }
 
     /*Ajuste na página de informações*/
