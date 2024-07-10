@@ -83,15 +83,15 @@ document.getElementById('confirmButton').addEventListener('click', function() {
   img.src = imagePreview;
   card.appendChild(img);
 
-  const name = document.createElement('h3');
+  const name = document.createElement('h2');
   name.textContent = nameInput;
   card.appendChild(name);
 
-  const age = document.createElement('p');
-  age.textContent = `Idade: ${ageInput}`;
+  const age = document.createElement('h3');
+  age.textContent = `Idade: ${ageInput} anos`;
   card.appendChild(age);
 
-  const breed = document.createElement('h4');
+  const breed = document.createElement('h3');
   breed.textContent = `Raça: ${breedInput}`;
   card.appendChild(breed);
 
