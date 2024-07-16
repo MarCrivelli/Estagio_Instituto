@@ -66,11 +66,11 @@ document.getElementById('confirmButton').addEventListener('click', function() {
   const nameInput = document.getElementById('nameInput').value;
   const ageInput = document.getElementById('ageInput').value;
   const breedInput = document.getElementById('breedInput').value;
-  const descriptionInput = document.getElementById('descriptionInput').value;
+  const historicoInput = document.getElementById('historicoInput').value;
   const animalTypeInput = document.getElementById('animalTypeInput').value;
   const imagePreview = document.getElementById('imagePreview').src;
 
-  if (!nameInput || !ageInput || !breedInput || !descriptionInput || !animalTypeInput) {
+  if (!nameInput || !ageInput || !breedInput || !historicoInput || !animalTypeInput) {
       alert('Por favor, preencha todos os campos.');
       return;
   }
@@ -99,9 +99,9 @@ document.getElementById('confirmButton').addEventListener('click', function() {
   type.textContent = `Tipo: ${animalTypeInput.charAt(0).toUpperCase() + animalTypeInput.slice(1)}`;
   card.appendChild(type);
 
-  const description = document.createElement('div');
-  description.textContent = descriptionInput;
-  card.appendChild(description);
+  const historico = document.createElement('div');
+  historico.textContent = historicoInput;
+  card.appendChild(historico);
 
   const actions = document.createElement('div');
   actions.className = 'card-actions';
@@ -119,7 +119,7 @@ document.getElementById('confirmButton').addEventListener('click', function() {
       document.getElementById('nameInput').value = nameInput;
       document.getElementById('ageInput').value = ageInput;
       document.getElementById('breedInput').value = breedInput;
-      document.getElementById('descriptionInput').value = descriptionInput;
+      document.getElementById('historicoInput').value = historicoInput;
       document.getElementById('animalTypeInput').value = animalTypeInput;
 
       if (img.src) {
@@ -146,7 +146,7 @@ function resetForm() {
   document.getElementById('nameInput').value = '';
   document.getElementById('ageInput').value = '';
   document.getElementById('breedInput').value = '';
-  document.getElementById('descriptionInput').value = '';
+  document.getElementById('historicoInput').value = '';
   document.getElementById('animalTypeInput').value = 'gato';
   document.getElementById('imagePreview').src = '';
   document.getElementById('imagePreview').style.display = 'none';
